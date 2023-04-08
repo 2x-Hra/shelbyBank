@@ -8,4 +8,8 @@ actor DBank{
   let id = 123123123123; //let keyword for constants
 
   Debug.print(debug_show(currentValue));
+
+  func topUp(){
+   
+  }
 }
