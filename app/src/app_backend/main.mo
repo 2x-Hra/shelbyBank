@@ -1,7 +1,6 @@
 import Debug "mo:base/Debug";
 
-// dfx  canister call projectName functionName '("parameter")' ==> dfx call app topUp
-// private functions define as : func name . . .
+// private functions define as : func name (){};
 
 actor DBank{
   var currentValue = 300; //variable
@@ -11,10 +10,10 @@ actor DBank{
 
   Debug.print(debug_show(currentValue));
 
-  func topUp(){ 
+  public func topUp(){ 
     currentValue += 1;
     Debug.print(debug_show(currentValue));
   };
 
-  topUp();
+  
 }
