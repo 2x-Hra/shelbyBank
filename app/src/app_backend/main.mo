@@ -18,5 +18,6 @@ actor DBank{
 
   public func withDraw( amount: Nat){
     currentValue -= amount;
+    Debug.print(debug_show(currentValue));
   }
 }
