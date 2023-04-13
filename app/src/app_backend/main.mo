@@ -16,5 +16,7 @@ actor DBank{
     Debug.print(debug_show(currentValue));
   };
 
-  
+  public func withDraw( amount: Nat){
+    
+  }
 }
