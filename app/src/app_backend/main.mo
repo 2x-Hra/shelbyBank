@@ -1,4 +1,5 @@
 import Debug "mo:base/Debug";
+import Nat "mo:base/Nat";
 
 // private functions define as : func name (){};
 // to get casnister ID for backend : dfx cansister id app_backend
@@ -10,8 +11,8 @@ actor DBank{
 
   Debug.print(debug_show(currentValue));
 
-  public func topUp(){ 
-    currentValue += 1;
+  public func topUp( amount: Nat){ 
+    currentValue += amount;
     Debug.print(debug_show(currentValue));
   };
 
