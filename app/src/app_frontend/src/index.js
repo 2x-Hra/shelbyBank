@@ -21,10 +21,15 @@ document.querySelector("form").addEventListener("submit", async function(event){
     await app_backend.topUp(inputAmount);
   }
   
+  if (document.getElementById("withdrawal-amount").value.length != 0){
+    await app_backend.withdrawl(outputAmount)
+  }
      
   const currentAmount = await app_backend.checkBalance();
   this.document.getElementById("value").innerText = Math.round(currentAmount*100) / 100;
 
   document.getElementById("input-amount").value = "";
+  document.getElementById("withdrawal-amount").value = "";
+
   button.removeAttribute("disabled");
 });
