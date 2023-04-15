@@ -16,8 +16,17 @@ actor DBank{
   };
 
   public func withdrawl( amount : Nat){
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue))
-  }
+    let tempValue: Int = currentValue - amount;
+    if(tempValue >= 0){
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue))
+    }else{
+      Debug.print("Amount too large, current Value less than zero");
+    }
+    
+  };
  
+  public query func checkBalance(): async Nat{
+    
+  };
 }
