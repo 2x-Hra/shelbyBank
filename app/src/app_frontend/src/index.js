@@ -17,12 +17,14 @@ document.querySelector("form").addEventListener("submit", async function(event){
   const outputAmount = parseFloat(document.getElementById("withdrawal-amount").value);
 
   button.setAttribute("disabled", true);
-
-  await app_backend.topUp(inputAmount);
+  if( document.getElementById("input-amount").value.length != 0){
+    await app_backend.topUp(inputAmount);
+  }
+  
      
   const currentAmount = await app_backend.checkBalance();
   this.document.getElementById("value").innerText = Math.round(currentAmount*100) / 100;
 
-
+  document.getElementById("input-amount").value = "";
   button.removeAttribute("disabled");
 });
