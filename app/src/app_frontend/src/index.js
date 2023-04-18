@@ -11,4 +11,10 @@ window.addEventListener("load", async function(){
 document.querySelector("form").addEventListener("submit", async function(event){
   event.preventDefault();
   console.log("submited");
+
+  const inputAmount = document.getElementById("input-amount").value;
+  const outputAmount = document.getElementById("withdrawal-amount").value;
+
+  await app_backend.topUp(inputAmount);
+     
 });
