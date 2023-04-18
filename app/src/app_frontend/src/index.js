@@ -4,5 +4,6 @@ window.addEventListener("load", async function(){
   // console.log('hii');
 
   const currentAmount = await app_backend.checkBalance();
-  this.document.getElementById("value").innerText = currentAmount;
+  
+  this.document.getElementById("value").innerText = Math.round(currentAmount*100) / 100;
 });
