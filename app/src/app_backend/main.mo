@@ -8,9 +8,13 @@ actor DBank{
   stable var currentValue = 300; //variable
   currentValue := 100;
 
+
+  stable var startTime = Time.now();
+  startTime := Time.now();
+  
   let id = 123123123123; //let keyword for constants
 
-
+  
   public func topUp( amount: Nat){
     currentValue += amount;
     Debug.print(debug_show(currentValue));
